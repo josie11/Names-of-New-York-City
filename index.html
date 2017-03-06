@@ -59,8 +59,8 @@
 
     //setting rank as the sorting/sizing variable
     root = d3.hierarchy(root)
-        .sum(function(d) { return Number(d.rank); })
-        .sort(function(a, b) { return a.value - b.value; });
+        .sum(function(d) { return Number(d.count); })
+        .sort(function(a, b) { return a - b; });
 
     var focus = root,
         nodes = pack(root).descendants(),
